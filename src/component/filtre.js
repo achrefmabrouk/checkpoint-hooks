@@ -12,7 +12,7 @@ const Filtre = ({setRate,setSearch,rate}) => {
             placeholder="Enter title"
           />
         </Form.Group>
-        <Rating name="simple-controlled" value={rate} max={10} onChange={(event,newvalue)=>setRate(newvalue)} />
+        <Rating name="simple-controlled"  max={10} onChange={(event,newvalue)=>setRate(newvalue)} />
       </Form>
     </div>
   );

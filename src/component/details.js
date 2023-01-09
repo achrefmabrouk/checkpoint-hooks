@@ -3,8 +3,7 @@ import { useParams } from "react-router-dom";
 
 const Details = ({ movies }) => {
   const { idmovie } = useParams();
-  const foundmovie = movies.find((el) => el.id == idmovie);
-  console.log(foundmovie);
+  const foundmovie = movies?.find((el) => el.id === idmovie);
   return (
     <div
       style={{
@@ -17,18 +16,18 @@ const Details = ({ movies }) => {
       }}
     >
       <div style={{ gap: "20px" }}>
-        <h1 style={{ gridArea: "1/1/2/1" }}>{foundmovie.title}</h1>
+        <h1 style={{ gridArea: "1/1/2/1" }}>{foundmovie?.title}</h1>
         <img
           style={{ height: "409px", width: "399px", gridArea: "2/1/4/1" }}
-          src={foundmovie.posterUrl}
+          src={foundmovie?.posterUrl}
           alt="movie"
         ></img>
-        <p style={{ gridArea: "4/1/5/2",fontWeight:'bold' }}>{foundmovie.description}</p>
+        <p style={{ gridArea: "4/1/5/2",fontWeight:'bold' }}>{foundmovie?.description}</p>
       </div>
 
       <iframe
         style={{ gridArea: "1/3/3/6", width: "700px", height: "600px" }}
-        src={foundmovie.trailerUrl}
+        src={foundmovie?.trailerUrl}
       ></iframe>
     </div>
   );
